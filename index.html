@@ -31,7 +31,21 @@
             color: #666;
             line-height: 1.6;
         }
-/* SNS・メッセージ箱のリンクエリア */
+        
+        /* 見出しのデザイン */
+        .section-title {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+            color: #8a8a8a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* SNS・メッセージ箱のリンクエリア */
         .sns-links {
             text-align: center;
             margin-bottom: 25px;
@@ -97,7 +111,7 @@
         /* サムネイル画像 */
         .card-img {
             width: 100%;
-            aspect-ratio: 3 / 3; /* 画像の縦横比を統一（ピクスペ風） */
+            aspect-ratio: 3 / 3; /* 画像の縦横比を統一（スクエア） */
             object-fit: cover;
             border-bottom: 1px solid #e2e8f0;
         }
@@ -150,9 +164,7 @@
         <h1>春見鶏</h1>
         <p>この度はお越しいただきありがとうございます！こちらでは煉獄杏寿郎夢小説をメインに扱っております。<br>
         書き下ろしの作品は、イベント先行公開となるためイベント期間後一度非公開とさせていただく予定です。ぜひこの機会にお楽しみください。</p>
-    </div>
-<div class="header">
-
+        <br>
         <p>♡感想・交流はこちら♡</p>
     </div>
 
@@ -162,9 +174,8 @@
         <a href="https://chocobox.me/あなたのURL" class="sns-btn btn-chocobox" target="_blank">チョコボックス</a>
     </div>
 
-    
-    <div class="grid">
-
+    <h2 class="section-title">NEW WORKS</h2>
+    <div class="grid" style="margin-bottom: 30px;">
         <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
             <img src="images/syukujyo.png" alt="淑女の顔は軍服に隠されて" class="card-img">
             <div class="card-content">
@@ -173,7 +184,10 @@
                 <div class="card-link">pixiv.net</div>
             </div>
         </a>
+    </div>
 
+    <h2 class="section-title">WORKS</h2>
+    <div class="grid">
         <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
             <img src="images/humibako.png" alt="文箱に翳る執心" class="card-img">
             <div class="card-content">
@@ -192,31 +206,33 @@
             </div>
         </a>
 
-         <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
+        <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
             <img src="images/reijyou.png" alt="令嬢は甘やかな檻で海を見る" class="card-img">
             <div class="card-content">
                 <div class="card-title">令嬢は甘やかな檻で海を見る</div>
                 <div class="card-desc">連載中『甘やかな檻で海を見る』第一話。二人だけの幸せの話</div>
                 <div class="card-link">pixiv.net</div>
             </div>
-　　　　 </a>
-             <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
+        </a>
+
+        <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
             <img src="images/reijyou.png" alt="毛先に綴じる春の面影" class="card-img">
             <div class="card-content">
                 <div class="card-title">毛先に綴じる春の面影</div>
                 <div class="card-desc">※死ネタ。シリアス。比較的最近投稿した読み切り作品です</div>
                 <div class="card-link">pixiv.net</div>
             </div>
-         </a>
-             <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
+        </a>
+
+        <a href="https://www.pixiv.net/novel/show.php?id=xxxxxx" class="card" target="_blank">
             <img src="images/yahan.png" alt="夜半のあわいで" class="card-img">
             <div class="card-content">
                 <div class="card-title">夜半のあわいで</div>
                 <div class="card-desc">甘。短め。さっと読みたい人向けの読み切り短編</div>
                 <div class="card-link">pixiv.net</div>
             </div>
-         </a>
-        </div>
+        </a>
+    </div>
 </div>
 
 </body>
