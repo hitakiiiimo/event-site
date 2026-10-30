@@ -77,16 +77,32 @@
         .sns-btn:hover {
             opacity: 0.8;
         }
-        
-        /* 綺麗に並ぶグリッドレイアウト（スマホ2列 / PC3列） */
+        /* 綺麗に並ぶグリッドレイアウト（中央寄せ対応） */
         .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* カードを中央に寄せる */
             gap: 16px;
         }
+
+        /* カードの幅指定（スマホは2列風、PCは3列風） */
+        .card {
+            width: calc(50% - 8px); /* スマホサイズで2列 */
+            max-width: 240px; /* カードが大きくなりすぎないように制限 */
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
         @media (min-width: 600px) {
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
+            .card {
+                width: calc(33.333% - 11px); /* PCサイズで3列 */
             }
         }
 
@@ -173,27 +189,16 @@
         <a href=" https://wavebox.me/wave/ezhshqrw3up5cdzn/" class="sns-btn btn-wavebox" target="_blank">WAVEBOX</a>
     </div>
 
-    <h2 class="section-title">NEW WORKS</h2>
+<h2 class="section-title">NEW WORKS</h2>
     <div class="grid" style="margin-bottom: 30px;">
         <a href="https://www.pixiv.net/novel/show.php?id=28255058" class="card" target="_blank">
             <img src="images/meiyuu.jpg" alt="盟友との約束には一つ抜け道がある" class="card-img">
             <div class="card-content">
                 <div class="card-title">盟友との約束には一つ抜け道がある</div>
-                <div class="card-desc">失恋の翌日。失恋の翌日。同期の煉獄くんとご飯に行って、その後――？</div>
+                <div class="card-desc">失恋の翌日。同期の煉獄くんとご飯に行って、その後――？</div>
                 <div class="card-link">pixiv.net</div>
             </div>
         </a>
-        
-        <a href="https://www.pixiv.net/novel/show.php?id=28255070" class="card" target="_blank">
-            <img src="images/aijin.jpg" alt="炎柱の愛人（偽）になったら車内でもバルコニーでも容赦なく飼い慣らされた話" class="card-img">
-            <div class="card-content">
-                <div class="card-title">炎柱の愛人（偽）になったら車内でもバルコニーでも容赦なく飼い慣らされた話</div>
-                <div class="card-desc">潜入調査として、成り金男に扮した炎柱と、その愛人となり富豪の私邸へ。背徳たっぷりR18です</div>
-                <div class="card-link">pixiv.net</div>
-            </div>
-        </a>
-        
-     
     </div>
 
     <h2 class="section-title">WORKS</h2>
