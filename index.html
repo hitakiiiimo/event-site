@@ -1,238 +1,468 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FAF8F6">
     <title>春見鶏 - 作品一覧</title>
+
     <style>
-        /* 全体のベースデザイン */
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
-            background-color: #fcfcfc;
-            color: #333;
-            margin: 0;
-            padding: 20px;
+        :root {
+            --accent: #CF7F72;
+            --pale-pink: #EFDDD5;
+            --background: #FAF8F6;
+            --text: #482019;
+            --sub-text: #89766F;
+            --line: #E9DCD6;
+            --white: #FFFFFF;
         }
+
+        /* 全体 */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:
+                "Helvetica Neue",
+                Arial,
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
         .container {
-            max-width: 800px;
+            max-width: 760px;
             margin: 0 auto;
         }
+
+        /* ヘッダー */
         .header {
             text-align: center;
-            margin-bottom: 30px;
-        }
-        .header h1 {
-            font-size: 24px;
-            margin-bottom: 8px;
-            color: #111;
-        }
-        .header p {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* 見出しのデザイン */
-        .section-title {
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 0.15em;
-            color: #8a8a8a;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 8px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            text-align: center;
+            margin-bottom: 48px;
         }
 
-        /* SNS・メッセージ箱のリンクエリア */
-        .sns-links {
-            text-align: center;
+        .site-name {
+            font-family:
+                "Yu Mincho",
+                "Hiragino Mincho ProN",
+                serif;
+            font-size: 32px;
+            font-weight: normal;
+            letter-spacing: 0.22em;
+            margin: 0 0 5px;
+            color: var(--text);
+        }
+
+        .site-subtitle {
+            font-family: Georgia, serif;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: var(--accent);
             margin-bottom: 25px;
         }
+
+        /* メイン写真 */
+        .header-image {
+            width: 100%;
+            max-width: 440px;
+            height: 190px;
+            object-fit: cover;
+            object-position: center 48%;
+            display: block;
+            margin: 0 auto 28px;
+            border-radius: 3px;
+        }
+
+        .welcome {
+            font-family:
+                "Yu Mincho",
+                "Hiragino Mincho ProN",
+                serif;
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .header-text {
+            font-size: 12px;
+            color: var(--sub-text);
+            line-height: 2;
+            margin: 0;
+        }
+
+        /* SNSリンク */
+        .sns-area {
+            margin-top: 24px;
+        }
+
+        .sns-caption {
+            font-size: 11px;
+            color: var(--sub-text);
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .sns-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
         .sns-btn {
             display: inline-block;
-            font-size: 13px;
-            font-weight: bold;
+            min-width: 105px;
+            padding: 7px 18px;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+            color: var(--text);
+            background: var(--white);
             text-decoration: none;
-            padding: 6px 14px;
-            margin: 4px;
-            border-radius: 20px;
-            transition: background-color 0.2s, color 0.2s;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            transition: all 0.2s;
         }
-        /* 各ボタンの色（お好みに合わせて変更できます） */
-        .btn-twitter {
-            background-color: #f3f4f6; /* 派手すぎない上品なライトグレー */
-            color: #1a1a1a;
-        }
-        .btn-wavebox {
-            background-color: #ffe4e6; /* WAVEBOXイメージの可愛い薄ピンク */
-            color: #e11d48;
-        }
-        .btn-chocobox {
-            background-color: #fef3c7; /* チョコボックスイメージの薄黄色 */
-            color: #d97706;
-        }
-        /* ホバーした時に少し濃くする */
+
         .sns-btn:hover {
-            opacity: 0.8;
+            background: var(--pale-pink);
+            border-color: var(--accent);
         }
-        /* 綺麗に並ぶグリッドレイアウト（中央寄せ対応） */
+
+        /* セクション見出し */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-family: Georgia, serif;
+            font-size: 13px;
+            font-weight: normal;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            margin: 55px 0 25px;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .section-note {
+            text-align: center;
+            font-size: 11px;
+            color: var(--sub-text);
+            margin: -15px 0 22px;
+        }
+
+        /* 作品一覧 */
         .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* カードを中央に寄せる */
-            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
         }
 
-        /* カードの幅指定（スマホは2列風、PCは3列風） */
+        /* 作品カード */
         .card {
-            width: calc(50% - 8px); /* スマホサイズで2列 */
-            max-width: 240px; /* カードが大きくなりすぎないように制限 */
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            color: inherit;
             text-decoration: none;
-            color: inherit;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        @media (min-width: 600px) {
-            .card {
-                width: calc(33.333% - 11px); /* PCサイズで3列 */
-            }
-        }
-
-        /* 作品カード単体のデザイン */
-        .card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            text-decoration: none; /* リンクの下線を消す */
-            color: inherit;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        /* ホバーした時に少し浮き上がらせる演出 */
         .card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 16px rgba(72, 32, 25, 0.08);
         }
-        
-        /* サムネイル画像 */
+
+        /* 正方形サムネイル */
         .card-img {
             width: 100%;
-            aspect-ratio: 3 / 3; /* 画像の縦横比を統一（スクエア） */
+            aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-bottom: 1px solid #e2e8f0;
+            display: block;
+            border-bottom: 1px solid var(--line);
         }
-        
-        /* テキストエリア */
+
+        /* カード内テキスト */
         .card-content {
-            padding: 12px;
+            padding: 14px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-        
-        /* 作品タイトル */
+
         .card-title {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 6px;
-            line-height: 1.4;
-            color: #1a1a1a;
+            font-family:
+                "Yu Mincho",
+                "Hiragino Mincho ProN",
+                serif;
+            font-size: 13px;
+            font-weight: normal;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: var(--text);
         }
-        
-        /* キャプション・一言（2行で綺麗に収める設定） */
+
         .card-desc {
             font-size: 11px;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            
-            /* 万が一文字が増えても2行で「…」と省略する魔法のCSS */
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            color: var(--sub-text);
+            line-height: 1.7;
+            margin-bottom: 12px;
+            flex-grow: 1;
         }
-        
-        /* リンクテキスト */
+
         .card-link {
-            font-size: 12px;
-            color: #e06a55; /* ピクスペ風のオレンジがかった赤 */
-            margin-top: auto; /* 常にカードの最下部に固定 */
+            font-family: Georgia, serif;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            color: var(--accent);
             text-align: right;
-            font-weight: bold;
+            margin-top: auto;
+        }
+
+        /* フッター */
+        .footer {
+            margin-top: 65px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            color: var(--sub-text);
+        }
+
+        /* スマートフォン */
+        @media (max-width: 520px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            .site-name {
+                font-size: 28px;
+            }
+
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .header-image {
+                height: 160px;
+            }
+
+            .section-title {
+                margin-top: 45px;
+            }
+
+            .grid {
+                gap: 12px;
+            }
+
+            .card-content {
+                padding: 10px;
+            }
+
+            .card-title {
+                font-size: 12px;
+            }
+
+            .card-desc {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>春見鶏</h1>
-        <p>この度はお越しいただきありがとうございます！こちらでは煉獄杏寿郎夢小説をメインに扱っております。<br>
-        新作は、イベント先行公開となるためイベント期間後一度非公開とさせていただく予定です。<br>ぜひこの機会にお楽しみください。</p>
-        <br>
-        <p>♡感想・交流はこちら♡</p>
-    </div>
 
-    <div class="sns-links">
-        <a href="https://x.com/Q_Leghorn" class="sns-btn btn-twitter" target="_blank">X（Twitter）</a>
-        <a href=" https://wavebox.me/wave/ezhshqrw3up5cdzn/" class="sns-btn btn-wavebox" target="_blank">WAVEBOX</a>
-    </div>
+    <!-- HEADER -->
+    <header class="header">
 
-<h2 class="section-title">NEW WORKS</h2>
-    <div class="grid" style="margin-bottom: 30px;">
-        <a href="https://www.pixiv.net/novel/show.php?id=28255058" class="card" target="_blank">
-            <img src="images/meiyuu.jpg" alt="盟友との約束には一つ抜け道がある" class="card-img">
-            <div class="card-content">
-                <div class="card-title">盟友との約束には一つ抜け道がある</div>
-                <div class="card-desc">失恋の翌日。同期の煉獄くんとご飯に行って、その後――？</div>
-                <div class="card-link">pixiv.net</div>
+        <h1 class="site-name">春見鶏</h1>
+        <div class="site-subtitle">DREAM NOVEL COLLECTION</div>
+
+        <img
+            src="images/smoke-tree.jpg"
+            alt="スモークツリーとアンティークの木の椅子"
+            class="header-image"
+        >
+
+        <h2 class="welcome">Welcome to my page</h2>
+
+        <p class="header-text">
+            この度はお越しいただきありがとうございます。<br>
+            こちらでは煉獄杏寿郎夢小説をメインに扱っております。<br>
+            新作2作のほか、既存作品から2作を展示しております。<br>
+            ぜひこの機会にお楽しみください。
+        </p>
+
+        <div class="sns-area">
+            <div class="sns-caption">♡ 感想・交流はこちら ♡</div>
+
+            <div class="sns-links">
+                <a
+                    href="https://x.com/Q_Leghorn"
+                    class="sns-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >X (Twitter)</a>
+
+                <a
+                    href="https://wavebox.me/wave/ezhshqrw3up5cdzn/"
+                    class="sns-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >WAVEBOX</a>
             </div>
-        </a>
-              
-        <a href="https://www.pixiv.net/novel/show.php?id=28255058" class="card" target="_blank">
-            <img src="images/tondemo.jpg" alt="どうやらとんでもない男を捕まえてしまったようです" class="card-img">
-            <div class="card-content">
-                <div class="card-title">どうやらとんでもない男を捕まえてしまったようです</div>
-                <div class="card-desc">推してた配送のお兄さんにラグジュアリーホテルに連れ込まれてスケスケお風呂で甘やかされた話</div>
-                <div class="card-link">pixiv.net</div>
-            </div>
-                </a>
-    </div>
+        </div>
 
-    <h2 class="section-title">WORKS</h2>
-    <div class="grid">
+    </header>
 
-        <a href="https://www.pixiv.net/novel/show.php?id=28255070" class="card" target="_blank">
-            <img src="images/aijin.jpg" alt="炎柱の愛人（偽）になったら車内でもバルコニーでも容赦なく飼い慣らされた話" class="card-img">
-            <div class="card-content">
-                <div class="card-title">炎柱の愛人（偽）になったら車内でもバルコニーでも容赦なく飼い慣らされた話</div>
-                <div class="card-desc">潜入調査として、成り金男に扮した炎柱と、その愛人となり富豪の私邸へ。背徳たっぷりR18です</div>
-                <div class="card-link">pixiv.net</div>
-            </div>
-        </a>
+    <!-- NEW WORKS -->
+    <section>
 
-        <a href="https://www.pixiv.net/novel/show.php?id=27715864" class="card" target="_blank">
-            <img src="images/kisei.jpg" alt="無自覚な幼馴染をお嫁さんにして溺愛したい千寿郎くんの既成事実の作り方" class="card-img">
-            <div class="card-content">
-                <div class="card-title">無自覚な幼馴染をお嫁さんにして溺愛したい千寿郎くんの既成事実の作り方</div>
-                <div class="card-desc">可愛い幼馴染だと思ってた千くんに、愛されすぎて外堀を埋められちゃう話です。</div>
-                <div class="card-link">pixiv.net</div>
-            </div>
-        </a>
+        <h2 class="section-title">NEW WORKS</h2>
+        <p class="section-note">今回の新作はこちら</p>
+
+        <div class="grid">
+
+            <a
+                href="https://www.pixiv.net/novel/show.php?id=28255058"
+                class="card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="images/meiyuu.jpg"
+                    alt="盟友との約束には一つ抜け道がある"
+                    class="card-img"
+                >
+
+                <div class="card-content">
+                    <div class="card-title">
+                        盟友との約束には一つ抜け道がある
+                    </div>
+
+                    <div class="card-desc">
+                        失恋の翌日。同期の煉獄くんとご飯に行って、その後――？
+                    </div>
+
+                    <div class="card-link">READ MORE →</div>
+                </div>
+            </a>
+
+            <a
+                href="https://www.pixiv.net/novel/show.php?id=28255058"
+                class="card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="images/tondemo.jpg"
+                    alt="どうやらとんでもない男を捕まえてしまったようです"
+                    class="card-img"
+                >
+
+                <div class="card-content">
+                    <div class="card-title">
+                        どうやらとんでもない男を捕まえてしまったようです
+                    </div>
+
+                    <div class="card-desc">
+                        推してた配送のお兄さんにラグジュアリーホテルに連れ込まれてスケスケお風呂で甘やかされた話。
+                    </div>
+
+                    <div class="card-link">READ MORE →</div>
+                </div>
+            </a>
+
+        </div>
+    </section>
 
 
-    </div>
+    <!-- EXISTING WORKS -->
+    <section>
+
+        <h2 class="section-title">WORKS</h2>
+        <p class="section-note">過去作品よりピックアップ</p>
+
+        <div class="grid">
+
+            <a
+                href="https://www.pixiv.net/novel/show.php?id=28255070"
+                class="card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="images/aijin.jpg"
+                    alt="炎柱の愛人（偽）になったら車内でもバルコニーでも容赦なく飼い慣らされた話"
+                    class="card-img"
+                >
+
+                <div class="card-content">
+                    <div class="card-title">
+                        炎柱の愛人（偽）になったら車内でもバルコニーでも容赦なく飼い慣らされた話
+                    </div>
+
+                    <div class="card-desc">
+                        潜入調査として、成り金男に扮した炎柱と、その愛人となり富豪の私邸へ。背徳たっぷりR18です。
+                    </div>
+
+                    <div class="card-link">READ MORE →</div>
+                </div>
+            </a>
+
+            <a
+                href="https://www.pixiv.net/novel/show.php?id=27715864"
+                class="card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="images/kisei.jpg"
+                    alt="無自覚な幼馴染をお嫁さんにして溺愛したい千寿郎くんの既成事実の作り方"
+                    class="card-img"
+                >
+
+                <div class="card-content">
+                    <div class="card-title">
+                        無自覚な幼馴染をお嫁さんにして溺愛したい千寿郎くんの既成事実の作り方
+                    </div>
+
+                    <div class="card-desc">
+                        可愛い幼馴染だと思ってた千くんに、愛されすぎて外堀を埋められちゃう話です。
+                    </div>
+
+                    <div class="card-link">READ MORE →</div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        HARUMIDORI
+    </footer>
+
 </div>
 
 </body>
