@@ -196,17 +196,10 @@
             flex-grow: 1;
         }
 
-        .card-title {
-            font-family:
-                "Yu Mincho",
-                "Hiragino Mincho ProN",
-                serif;
-            font-size: 13px;
-            font-weight: normal;
-            line-height: 1.6;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
+.card-title {
+  font-weight: 700;
+  color: #B85F50;
+}
 
         .card-desc {
             font-size: 11px;
@@ -239,6 +232,15 @@
             color: var(--sub-text);
         }
 
+        
+/* PC表示：サムネイルを少し小さく */
+@media (min-width: 768px) {
+  .card-img {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
         /* SMARTPHONE */
 
         @media (max-width: 520px) {
